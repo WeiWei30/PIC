@@ -1,0 +1,48 @@
+newproject;
+save('1.fsp');
+
+SOI_draw;
+
+width_grating=500e-9;
+period=660e-9;
+duty_cycle=0.5;
+num_period=50;
+t=220e-9;
+etch_depth=70e-9;
+width_substrate=2e-6;
+length_waveguide=20e-6;
+
+addrect;set('name','waveguide in');
+set('material',material_Si);
+set('z min',0);set('z max',t);
+set('x min',-length_SOI/2);set('x max',-length_SOI/2+length_waveguide);
+set('y',0);set('y span',0.5e-6);
+
+addgroup;
+set('name','grating coupler');
+
+addrect;set('name','grating 0');
+set('material',material_Si);
+set('z min',0);set('z max',t-etch_depth);
+set('x min',-length_SOI/2+length_waveguide);
+set('x max',-length_SOI/2+length_waveguide+num_period*period);
+set('y',0);set('y span',0.5e-6);
+addtogroup('grating coupler');
+
+for(i=0:num_period-1)
+{
+    addrect;set('name','grating '+num2str(i+1));
+    set('material',material_Si);
+    set('y',0);set('y span',0.5e-6);
+    set('z min',t-etch_depth);set('z max',t);
+    set('x min',-length_SOI/2+length_waveguide+i*period);
+    set('x max',-length_SOI/2+length_waveguide+i*period+duty_cycle*period);
+    addtogroup('grating coupler');
+}
+
+addfdtd;
+set('z max',15e-6);set('z min',-6e-6);
+set('x min',-(thick_box+0.2e-6));
+set('x max',thick_clad+2e-6);
+set('mesh accuracy',3);
+set('simulation time',1000e-15);

@@ -1,0 +1,40 @@
+#SOI_draw
+#Si structure should be designed @z=0
+
+
+
+#parameter of SOI
+thick_clad=2e-6;
+thick_Si=0.22e-6;
+thick_box=2e-6;
+thick_Si_substrate=2e-6;
+width_SOI=2e-6;
+length_SOI=50e-6;
+material_Si='Si (Silicon) - Palik';
+material_SiO2='SiO2 (Glass) - Palik';
+
+#cladding
+addrect;set('name','cladding');
+set('material',material_SiO2);
+set('y',0);set('y span',width_SOI);
+set('z min',0);set('z max',thick_clad);
+set('x',0);set('x span',length_SOI);
+set('override mesh order from material database',1);
+set('mesh order',3);
+set('alpha',0.1);
+
+#BOX
+addrect;set('name','BOX');
+set('material',material_SiO2);
+set('y',0);set('y span',width_SOI);
+set('z min',-thick_box);set('z max',0);
+set('x',0);set('x span',length_SOI);
+set('alpha',0.2);
+
+#Si substrate
+addrect;set('name','BOX');
+set('material',material_SiO2);
+set('y',0);set('y span',width_SOI);
+set('z min',-thick_box-thick_Si_substrate);set('z max',-thick_box);
+set('x',0);set('x span',length_SOI);
+set('alpha',0.3);

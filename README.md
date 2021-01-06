@@ -11,6 +11,9 @@ File folder Scripts shows the codes for simulation of silicon photonics devices.
 
 ---
 ## Basic Knowledge
+### Electrodynamics
++ inner&outer product of three vectors: https://www.overleaf.com/read/rcpxgcyvgqcq
+### Optical device
 + waveguide: https://zhuanlan.zhihu.com/p/279532423
 + grating coupler: https://zhuanlan.zhihu.com/p/336658664
 

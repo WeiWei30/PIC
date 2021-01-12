@@ -16,7 +16,8 @@ File folder Scripts shows the codes for simulation of silicon photonics devices.
 ### Optical device
 + waveguide: https://zhuanlan.zhihu.com/p/279532423
 + grating coupler: https://zhuanlan.zhihu.com/p/336658664
-
+### Manufacturing process
++ pn junction & field effect transistor(FET)：https://www.overleaf.com/read/kstqskmhhfrp
 ---
 ## Reference
 1. Chrostowski, L., & Hochberg, M. (2015). *Silicon Photonics Design: From Devices to Systems.* Cambridge: Cambridge University Press. doi:10.1017/CBO9781316084168

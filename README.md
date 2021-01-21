@@ -14,8 +14,12 @@ File folder Scripts shows the codes for simulation of silicon photonics devices.
 ### Electrodynamics
 + inner&outer product of three vectors: https://www.overleaf.com/read/rcpxgcyvgqcq
 ### Optical device
+#### passive device
 + waveguide: https://zhuanlan.zhihu.com/p/279532423
 + grating coupler: https://zhuanlan.zhihu.com/p/336658664
++ ring resonator：
++ ring resonator emitter：
+#### active device
 ### Manufacturing process
 + pn junction & field effect transistor(FET)：https://www.overleaf.com/read/kstqskmhhfrp
 ---
